@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Silhouette Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="27bc139d-794f-47ef-a6d8-56fecebd5115">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<parameter name="hebrewYear" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT m.manuNum, m.name, m.address, m.contactName, m.contactPhone, m.contactMail, p.productNum, p.productName, p.Description,
+pc.catName, g.groupName, g.activityYear, s.schoolName, c.cityName, a.areaName, sn.netName, st.typeName, gt.groupTypeName
+FROM manufacturers m inner join products p on m.manuNum = p.manuNum inner join product_categories pc on p.catId = pc.catId
+inner join groups g on p.groupNum = g.groupNum and p.schoolNum = g.schoolNum inner join schools s on g.schoolNum = s.schoolNum inner join cities c on s.cityNum = c.cityNum inner join areas a on c.areaNum = a.areaNum inner join schoolnetwork sn on s.netId = sn.netId
+inner join schooltype st on s.typeId = st.typeId inner join grouptypes gt on g.groupTypeNum = gt.groupTypeNum
+ORDER BY m.name]]>
+	</queryString>
+	<field name="contactMail" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contactPhone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contactName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="schoolName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="manuNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productNum" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="catName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="groupName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="activityYear" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cityName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="areaName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="netName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="typeName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="groupTypeName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{manuNum}]]></groupExpression>
+		<groupHeader>
+			<band height="82">
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="badab5f6-086d-4fd5-84e0-f0731d3e5b65" style="SubTitle" x="660" y="5" width="118" height="21" forecolor="#000000"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement uuid="aca2e13f-22cf-49e8-95ef-82ded881b5e5" mode="Opaque" x="790" y="2" width="12" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+				</rectangle>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="3ee8e9fb-a1c4-4c05-a95d-aa3a2307fb37" style="SubTitle" x="650" y="33" width="60" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{contactName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="fc57b691-8bff-4606-87f5-ec0f3294d767" style="SubTitle" x="475" y="33" width="85" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{contactPhone}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="5d95b94b-ac25-4533-b22b-ceff47189fc2" style="SubTitle" x="292" y="33" width="100" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{contactMail}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7ca37171-ae0d-4586-90f7-6855eb919f3a" style="Column header" x="392" y="33" width="83" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="C:\Windows\Fonts\arialbd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[דוא"ל איש קשר]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="72684e45-ef97-4ef1-9508-76b34c2b9fa7" style="Column header" x="710" y="33" width="70" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="C:\Windows\Fonts\arialbd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[שם איש קשר]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bb78eeea-cf02-432e-82a3-3acae870413d" style="Column header" x="560" y="33" width="80" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="C:\Windows\Fonts\arialbd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[טלפון איש קשר]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a09369b3-5091-4a21-84d4-7365d267a51b" style="Column header" x="710" y="55" width="70" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="C:\Windows\Fonts\arialbd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[כתובת]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="61909a53-590c-45f1-b21e-e43df5a37382" style="SubTitle" x="580" y="55" width="130" height="15" forecolor="#808080"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<frame>
+					<reportElement uuid="05c9a123-3edd-4f32-a4b2-0a9a785fc437" mode="Opaque" x="60" y="0" width="742" height="10" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="575" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="600961af-e1f3-4a8d-8eb7-46c8098f0504" x="-20" y="234" width="20" height="241" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement uuid="3e59aee5-c1b0-4e84-8ff3-59ae510b0190" mode="Opaque" x="-20" y="475" width="80" height="87" backcolor="#666666"/>
+				<textField>
+					<reportElement uuid="6f7817b4-5b34-475b-a6b0-a729b1540958" style="Column header" x="5" y="6" width="66" height="49" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="22" isBold="true" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement uuid="d2f2fa01-3a45-4504-8c78-bea1ede2bc7d" style="Column header" x="1" y="52" width="70" height="20" forecolor="#000000"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="8ff67743-b4e9-40a8-9133-655737eb9f93" mode="Transparent" x="26" y="47" width="20" height="1" backcolor="#FFFFFF"/>
+				</line>
+			</frame>
+			<image>
+				<reportElement uuid="17b9e684-ec26-47ef-92cd-bbd56ed1fa5e" x="10" y="240" width="50" height="230"/>
+				<imageExpression><![CDATA["C:/Eclipse/Workspace/WebContent/common/images/yazamim-logo-rotate.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5558ac05-5995-4b81-909c-f34eb012a5ed" style="Title" x="0" y="0" width="802" height="67"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[מוצרים לפי יצרן]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="2fcf9e35-ac4b-48cf-96de-85704cf7b18e" mode="Opaque" x="60" y="5" width="742" height="20" backcolor="#666666"/>
+				<staticText>
+					<reportElement uuid="36f3e970-4587-4c5f-8e9c-8fac1ba4ff85" style="Column header" x="225" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[שנת פעילות]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="5306c9f0-a0fe-475b-881b-0493a892753b" style="Column header" x="500" y="0" width="50" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[עיר]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="5654514a-3980-4e68-83a9-a800761861f3" style="Column header" x="550" y="0" width="50" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[אזור]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4d12cef2-729c-4217-b50e-34b9332d20e2" style="Column header" x="600" y="0" width="60" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[קבוצה]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="e1fb5aa8-889a-46ea-a2ea-c3d3c211d167" style="Column header" x="660" y="0" width="80" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[ביה"ס]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="08d94b67-1534-46e5-9553-d25080f00a3c" style="Column header" x="165" y="0" width="63" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[שם מוצר]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="86566321-6b8c-4983-8e7d-9fec180af557" style="Column header" x="95" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[קטגוריה]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="77805b25-db2b-46c6-92f6-8e77dfe72274" style="Column header" x="21" y="0" width="76" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[תאור]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2a81f000-ff43-4e49-89e1-3574aa97eb7d" style="Column header" x="440" y="0" width="60" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[סוג ביה"ס]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="0b91c59a-97b9-464d-9665-da0b3c16265c" style="Column header" x="370" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[רשת ביה"ס]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="da03889b-7a4d-4019-9caf-0aefc25b285d" style="Column header" x="307" y="0" width="60" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[סוג קבוצה]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement uuid="0a60a637-62d1-492d-a82b-8024c29c9621" x="80" y="1" width="722" height="15"/>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="fdb47e60-ceeb-41f3-9568-598b011007a5" style="Detail" x="480" y="0" width="50" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{cityName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="e78cece0-871a-4df4-8434-ba06015b89ab" style="Detail" x="530" y="0" width="50" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{areaName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="63710c47-e439-4f7f-8be2-9fc6e9a3d5fe" style="Detail" x="580" y="0" width="60" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{groupName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="2f9f2dc6-28ab-4c81-bf0c-01bb3418330d" style="Detail" x="640" y="0" width="82" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{schoolName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="f9dffb70-05aa-4128-a6e0-d4b3d72574d3" style="Detail" x="420" y="0" width="60" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{typeName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="16372e59-f6f1-457d-b15d-e2daec844b37" style="Detail" x="0" y="0" width="75" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{Description}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement uuid="4489a048-9307-4e71-a1db-fbba66b9418f" positionType="FixRelativeToBottom" x="80" y="16" width="722" height="2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="667406c6-ce9a-4b39-800b-4589cc38a760" style="Detail" x="355" y="1" width="72" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{groupTypeName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="70d69aed-bdfb-46ca-b848-74d5d27dc081" style="Detail" x="155" y="1" width="70" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{catName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="12aeb589-441e-49b5-8975-e21f5676d8ce" style="Detail" x="225" y="1" width="63" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="6fd036eb-a2d1-429c-8513-bb6f54efaf2a" style="Detail" x="288" y="1" width="67" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{hebrewYear}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="01350ffd-23be-4cbe-ae3b-d6c9e5d38b1f" style="Detail" x="430" y="1" width="70" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{netName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="29">
+			<staticText>
+				<reportElement uuid="267b946b-d008-491a-83ee-d2b4c00a7299" x="100" y="8" width="134" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[מוצרים לפי יצרן]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="127e06da-1019-48ae-ae59-cb97f1000f99" style="Column header" x="671" y="8" width="131" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

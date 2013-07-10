@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Silhouette Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="8fab0a02-39fe-4486-8a0d-be0d82b6cee6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[SELECT s.schoolNum, s.schoolName, sn.netId, sn.netName, sty.typeId, sty.typeName, g.groupNum, g.groupName, 
+			gt.groupTypeNum, gt.groupTypeName, a.areaNum, a.areaName, c.cityNum, c.cityName, meetingDay,
+			g.meetingTime, st.stepNum, st.stepName, p.programNum, p.programName, g.activityYear FROM schools s INNER JOIN groups g ON 
+			s.schoolNum = g.schoolNum INNER JOIN groupTypes gt ON g.groupTypeNum = gt.groupTypeNum INNER JOIN 
+			cities c ON s.cityNum = c.cityNum INNER JOIN steps st ON g.stepNum = st.stepnum INNER JOIN programs p 
+			ON g.programNum = p.programNum INNER JOIN areas a ON c.areaNum = a.areaNum
+			INNER JOIN schoolnetwork sn ON s.netId = sn.netId INNER JOIN schooltype sty ON s.typeId = sty.typeId]]>
+	</queryString>
+	<field name="programName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stepName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="groupTypeName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="meetingTime" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="meetingDay" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="typeName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="netName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cityName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="areaName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="schoolName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="groupName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{programName}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement uuid="f4b07b8c-78aa-46ad-bbd6-e9161b40b0df" style="SubTitle" x="143" y="13" width="637" height="24" forecolor="#000000"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{programName}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement uuid="6871c920-967f-4239-a0b9-d0638a61f303" mode="Opaque" x="790" y="13" width="12" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="30">
+				<frame>
+					<reportElement uuid="ffc7a7d1-b8c9-4239-9ce6-3d8c14e60314" mode="Opaque" x="97" y="0" width="705" height="10" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="575" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="f6a7e7ec-feb2-4769-bc6a-bbe728b01ac4" x="-20" y="234" width="20" height="241" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement uuid="3d4b773a-064f-401e-91f0-e7b69a39e05f" mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666"/>
+				<textField>
+					<reportElement uuid="9e6b6b01-d5ce-4448-8a46-95e2fe8f38c0" style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement uuid="922eee31-b88b-4bb0-a54a-5002cae3362d" style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="29ffb822-b4a1-4d01-8cab-587ca04b3be0" mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF"/>
+				</line>
+			</frame>
+			<image>
+				<reportElement uuid="3a4fb939-1a29-48b7-801b-04ae90effa78" x="7" y="234" width="73" height="236"/>
+				<imageExpression><![CDATA["C:/Eclipse/Workspace/WebContent/common/images/yazamim-logo-rotate.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5cc3dcce-84ed-45c9-b563-361ade472bf5" style="Title" x="0" y="0" width="802" height="67"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="C:\Windows\Fonts\Arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[קבוצות לפי תכנית]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="55a088cc-cf1d-4d7b-847d-864ef771a697" mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666"/>
+				<staticText>
+					<reportElement uuid="20eae0ff-a54f-4a7f-a109-658abfec38e8" style="Column header" x="0" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[שלב]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ced238a4-b444-479b-90a7-1f97bc0b6650" style="Column header" x="70" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[סוג קבוצה]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="d92d53aa-1c3c-42e2-a618-67e4c3b36fda" style="Column header" x="140" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[שעת מפגש]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="11f6d2a0-d236-48a5-8c43-3d0c488f0411" style="Column header" x="210" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[יום מפגש]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="669367e8-2ce1-4227-8bec-0e04078b4263" style="Column header" x="280" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[סוג ביה"ס]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="3c53ab73-7498-4056-b452-30695bc87554" style="Column header" x="350" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[רשת ביה"ס]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="cdcf4d37-5046-4a02-96e5-ac3e8048a212" style="Column header" x="420" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[עיר/יישוב]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="dd5521ac-d782-4d37-bd90-87d20b792585" style="Column header" x="490" y="0" width="60" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[אזור]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b85f2ed0-147c-40d6-bdba-b9cf64741d89" style="Column header" x="560" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[בית ספר]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="1f5faf51-7b28-4c93-a6c5-57c0244d1487" style="Column header" x="630" y="0" width="70" height="15" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[קבוצה]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement uuid="cc352e75-6ec6-436b-80b9-1f8603a7bdb7" x="97" y="1" width="705" height="15"/>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="6bbce174-287d-4410-a98d-d58da9c2b0b6" style="Detail" x="0" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{stepName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="de37f9ca-15b8-498c-aed6-f94d50b918a9" style="Detail" x="70" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{groupTypeName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="065bfe24-dc46-461c-b6c8-09a4fcbf2818" style="Detail" x="140" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[new SimpleDateFormat("HH:mm:ss").format($F{meetingTime})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="03223d65-f1c9-4580-af61-7d951e4bdc21" style="Detail" x="210" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{meetingDay}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="95a46906-10b7-46a6-a0c2-04079b00d007" style="Detail" x="280" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{typeName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="ed178f0c-d1d9-4432-a992-8582953652bd" style="Detail" x="350" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{netName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="a413c846-284f-4fe1-8112-3278933e5fbb" style="Detail" x="420" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{cityName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="5766574c-9eba-4d6d-9cba-d703be29b5f2" style="Detail" x="490" y="0" width="60" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{areaName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="898f3153-579b-4acd-b3ab-549cca8c2e3f" style="Detail" x="560" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{schoolName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="c491f9cc-37c9-41ad-b37b-faaed871cbe1" style="Detail" x="630" y="0" width="70" height="15"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{groupName}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement uuid="068de4a3-22b3-4004-8468-edc092977322" positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="df10661e-2725-406b-a631-9127de2e9df1" style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="490ba1a0-5374-42b9-a1c2-ccee367e74a6" x="96" y="0" width="267" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[קבוצות לפי תכנית]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

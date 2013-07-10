@@ -1,0 +1,314 @@
+@CHARSET "UTF-8";
+
+* {
+    direction: rtl;
+}
+
+body {
+    font: 14px Arial, Helvetica, sans-serif;
+    color: #000000;
+    line-height: 18px;
+    margin: 0;
+    background-color: #E9F2E9;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+#imgLink {
+    padding: 0px 35px 0px 0px;
+}
+
+.additionFieldSet {
+    padding-bottom: 1px;
+}
+table {
+    margin: auto;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #045322;
+    color: #FFFFFF;
+    -webkit-border-radius: 5px;
+}
+
+select {
+    width: 124px;
+    overflow: hidden;
+    background: url(buttons/down_arrow_select.png) no-repeat left white;
+    -webkit-appearance: none;
+    -webkit-border-radius: 5px;
+    border-color: #D9D9D9 #EAEAEA white;
+    margin-top: 0px;
+    padding-bottom: 3px;
+}
+input[type="text"], input[type="password"], textarea {
+    width: 109px;
+    background: white none repeat scroll 0 0;
+    border: 0 none;
+    height: 24px;
+    margin: 0;
+    padding: 0px 0px 0px 14px;
+    line-height: 26px;
+    border-color: #D9D9D9 #EAEAEA white;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+}
+
+.status-span {
+    border-color: #D9D9D9 #EAEAEA white;
+}
+fieldset {
+    border-radius: 5px;
+    border-color: #FFFFFF;
+}
+
+textarea {
+    font: 12px Arial, Helvetica, sans-serif;
+    resize: none;
+}
+.a-table:hover {
+    color: green;
+    font-weight: bold;
+}
+#header {
+    height: 60px;
+    background: url(images/yazamim-logo.png) no-repeat 98% 3px;
+}
+
+.menu-background {
+    background: url("images/menu-2px.png") repeat-x scroll 0 0;
+    height: 30px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+#main-menu {
+    margin: auto;
+    width: 1014px;
+}
+
+.menu-divider {
+    background: url("images/menu-divider.png") no-repeat 0 0;
+    float: right;
+    height: 30px;
+    width: 2px;
+}
+
+#main-menu > a {
+    color: #000000;
+    float: right;
+    width: 120px;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#main-menu > a:hover {
+    color: #045322;
+    font-weight: bold;
+}
+
+#main {
+    width: 1206px;
+    margin: 0 auto 75px auto;
+}
+
+#mainHeader {
+    padding: 1px 500px 1px 37px;
+}
+
+#footer {
+    bottom: 0;
+    left: 0;
+    border-top: 1px dotted;
+    height: 20px;
+    width: 100%;
+    font-size: 11px;
+    position: fixed;
+    background-color: #045322;
+    color: #FFFFFF;
+}
+
+#login {
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    width: 334px;
+    margin-right: -167px;
+}
+
+#login form {
+    width: 240px;
+    margin: 25px auto;
+}
+
+#login span {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+}
+
+#login .buttons {
+    margin: 10px 0;
+}
+
+.error {
+    color: #B20000;
+}
+
+.short-table {
+    max-height: 200px;
+}
+
+.long-table {
+    max-height: 500px;
+}
+
+.data-table {
+    margin: 8px 0;
+    overflow: auto;
+}
+
+.data-table > table {
+    width: 100%;
+}
+
+.marketing-none {
+    background-color: #EABFFE;
+}
+
+.marketing-low {
+    background-color: #FECCBF;
+}
+
+.marketing-medium {
+    background-color: #FEF280;
+}
+
+.marketing-high {
+    background-color: #E6FE80;
+}
+
+.marketing-success {
+    background-color: #FFFFFF;
+}
+
+.clear {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-column {
+    float: right;
+    margin: 0 0 20px 50px;
+}
+
+.textareas-column {
+    float: right;
+    margin: 0 0 20px 50px;
+}
+
+.textareas-column textarea {
+    height: 60px;
+    width: 400px;
+}
+
+.data-table-small {
+    margin: 70px 0;
+    height: 300px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #D3C8C8 #D5D2D2 white;
+}
+
+.data-table-small > table {
+    margin: auto;
+    table-layout: fixed;
+    width: 80%;
+    overflow-x: auto;
+}
+
+.data-table > table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.grpFildst {
+    width: 68%;
+    border-radius: 5px;
+    border-color: white;
+}
+
+.grp_M_div {
+    width: 300px;
+    float: right;
+    margin-bottom: 50px;
+}
+
+.grp_M_div > input select {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.grp_M_div > label {
+    padding-right: 4px;
+}
+
+.grp_L_div {
+    width: 300px;
+    float: right;
+    margin-bottom: 50px;
+}
+
+.grp_L_div > input select {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.grp_L_div > label {
+    padding-right: 4px;
+}
+
+.inst_R_div {
+    width: 300px;
+    float: right;
+    margin-bottom: 50px;
+}
+
+.inst_R_div > label {
+    padding-right: 4px;
+}
+
+.inst_R_div > input select {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.inst_RM_Div {
+    width: 500px;
+    float: right;
+    margin-bottom: 50px;
+}
+
+.inst_RM_Div > label {
+    padding-right: 4px;
+}
+
+.sponsgrptableDiv {
+    padding: 174px 0px 0px 0px;
+}
+
+.bindStatus {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
