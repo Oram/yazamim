@@ -64,6 +64,10 @@
                 <label>דוא"ל איש קשר<br> <input id ="contactMail"name="contactMail" type="text" placeholder='דוא"ל איש קשר'
                     value="<%=fromDB ? school.getContactMail() : ""%>"></label>
             </div>
+            <div class="textareas-column">
+                <label>הערות</label><br>
+                <textarea name="comments"><%=fromDB ? school.getComments() : ""%></textarea>
+            </div>
             <%if(schoolArea == empArea || empArea == 0){ %>
             <div class="buttons clear">
                 <button class='positive' type="submit">

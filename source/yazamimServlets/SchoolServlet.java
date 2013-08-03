@@ -45,9 +45,13 @@ public class SchoolServlet extends HttpServlet {
 					request.getParameter("contactPhone"),
 					request.getParameter("contactMail"),
 					Integer.parseInt(request.getParameter("cityNum")), netId,
-					Integer.parseInt(request.getParameter("typeId")));
-			DBQueries.insertUpdate("עודכנו פרטי בית הספר "+request.getParameter("schoolName"), request.getHeader("Referer")
-					.toString(), request.getRemoteUser());
+					Integer.parseInt(request.getParameter("typeId")),
+					request.getParameter("comments"));
+			DBQueries.insertUpdate(
+					"עודכנו פרטי בית הספר "
+							+ request.getParameter("schoolName"), request
+							.getHeader("Referer").toString(), request
+							.getRemoteUser());
 		} else {
 			schoolNum = DBQueries.insertSchool(
 					request.getParameter("schoolName"),
@@ -59,10 +63,13 @@ public class SchoolServlet extends HttpServlet {
 					request.getParameter("contactPhone"),
 					request.getParameter("contactMail"),
 					Integer.parseInt(request.getParameter("cityNum")), netId,
-					Integer.parseInt(request.getParameter("typeId")));
-			
-			DBQueries.insertUpdate("נוסף בית הספר "+request.getParameter("schoolName"), request.getHeader("Referer")
-					.toString()+"?schoolNum="+schoolNum, request.getRemoteUser());
+					Integer.parseInt(request.getParameter("typeId")),
+					request.getParameter("comments"));
+
+			DBQueries.insertUpdate(
+					"נוסף בית הספר " + request.getParameter("schoolName"),
+					request.getHeader("Referer").toString() + "?schoolNum="
+							+ schoolNum, request.getRemoteUser());
 		}
 		response.sendRedirect("/schools/schools.jsp?");
 	}
