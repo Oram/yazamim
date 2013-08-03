@@ -69,8 +69,8 @@ public class DBQueries {
 			+ " WHERE c.cityNum=?";
 
 	private static final String UPDATE_SCHOOL = "UPDATE schools SET schoolName=?, address=?, principleName=?, "
-			+ "phone=?, fax=?, email=?, contactName=?, contactPhone=?, contactMail=?, cityNum=?, netId=?, typeId=?, comments=? "
-			+ "WHERE schoolNum=?";
+			+ "phone=?, fax=?, email=?, contactName=?, contactPhone=?, contactMail=?, cityNum=?, netId=?, typeId=?, "
+			+ "comments=? WHERE schoolNum=?";
 
 	private static final String INSERT_SCHOOL = "INSERT schools (schoolName, address, principleName, "
 			+ "phone, fax, email, contactName, contactPhone, contactMail, cityNum, netId, typeId, comments) "
