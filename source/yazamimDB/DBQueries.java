@@ -38,14 +38,14 @@ public class DBQueries {
 
 	private static final String GET_SCHOOLS_LIST = "SELECT s.schoolNum, s.schoolName, c.areaNum, a.areaName, "
 			+ "s.cityNum, c.cityName, s.address, s.principleName, s.phone, s.fax, s.email, s.contactName, "
-			+ "s.contactPhone, s.contactMail, netId, typeId FROM schools s INNER JOIN cities c ON "
+			+ "s.contactPhone, s.contactMail, s.netId, s.typeId, s.comments FROM schools s INNER JOIN cities c ON "
 			+ "s.cityNum=c.cityNum INNER JOIN areas a ON a.areaNum=c.areaNum ";
 
 	private static final String GET_SCHOOLS_WITH_MARKETING_STATUS = "SELECT s.schoolNum, s.schoolName, "
 			+ "c.areaNum, a.areaName, s.cityNum, c.cityName, s.address, s.principleName, s.phone, s.fax, s.email, "
-			+ "s.contactName, s.contactPhone, s.contactMail, netId, typeId, b.bindingYear, b.marketingStatus FROM "
-			+ "schools s INNER JOIN cities c ON s.cityNum=c.cityNum INNER JOIN areas a ON a.areaNum=c.areaNum "
-			+ "LEFT JOIN bindings b ON s.schoolNum=b.schoolNum AND bindingYear=?";
+			+ "s.contactName, s.contactPhone, s.contactMail, s.netId, s.typeId, s.comments, b.bindingYear, "
+			+ "b.marketingStatus FROM schools s INNER JOIN cities c ON s.cityNum=c.cityNum INNER JOIN areas a "
+			+ "ON a.areaNum=c.areaNum LEFT JOIN bindings b ON s.schoolNum=b.schoolNum AND bindingYear=?";
 
 	private static final String REPLACE_EMPTY_BINDING = "REPLACE bindings (schoolNum, bindingYear, marketingStatus) "
 			+ "VALUES(?,?,?)";
@@ -582,7 +582,7 @@ public class DBQueries {
 						rs.getString("email"), rs.getString("contactName"),
 						rs.getString("contactPhone"),
 						rs.getString("contactMail"), rs.getInt("netId"),
-						rs.getInt("typeId"));
+						rs.getInt("typeId"), rs.getString("comments"));
 				schools.add(school);
 			}
 		} catch (Exception e) {
@@ -616,7 +616,7 @@ public class DBQueries {
 						rs.getString("email"), rs.getString("contactName"),
 						rs.getString("contactPhone"),
 						rs.getString("contactMail"), rs.getInt("netId"),
-						rs.getInt("typeId"));
+						rs.getInt("typeId"), rs.getString("comments"));
 				schools.add(school);
 			}
 		} catch (Exception e) {
@@ -650,7 +650,7 @@ public class DBQueries {
 						rs.getString("email"), rs.getString("contactName"),
 						rs.getString("contactPhone"),
 						rs.getString("contactMail"), rs.getInt("netId"),
-						rs.getInt("typeId"));
+						rs.getInt("typeId"), rs.getString("comments"));
 				schools.add(school);
 			}
 		} catch (Exception e) {
@@ -684,7 +684,7 @@ public class DBQueries {
 						rs.getString("email"), rs.getString("contactName"),
 						rs.getString("contactPhone"),
 						rs.getString("contactMail"), rs.getInt("netId"),
-						rs.getInt("typeId"));
+						rs.getInt("typeId"), rs.getString("comments"));
 				schools.add(school);
 			}
 		} catch (Exception e) {
@@ -719,7 +719,7 @@ public class DBQueries {
 						rs.getString("email"), rs.getString("contactName"),
 						rs.getString("contactPhone"),
 						rs.getString("contactMail"), rs.getInt("netId"),
-						rs.getInt("typeId"));
+						rs.getInt("typeId"), rs.getString("comments"));
 			}
 		} catch (Exception e) {
 			System.err.println("Exception: " + e.getMessage());
@@ -766,7 +766,7 @@ public class DBQueries {
 						rs.getString("email"), rs.getString("contactName"),
 						rs.getString("contactPhone"),
 						rs.getString("contactMail"), rs.getInt("netId"),
-						rs.getInt("typeId"), binding);
+						rs.getInt("typeId"), rs.getString("comments"), binding);
 				schools.add(school);
 			}
 		} catch (Exception e) {

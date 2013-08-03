@@ -1,6 +1,6 @@
 function School(schoolNum, schoolName, areaNum, areaName, cityName, address,
 		principleName, phone, fax, email, contactName, contactPhone,
-		contactMail, netId, typeId, marketingStatus) {
+		contactMail, netId, typeId, comments, marketingStatus) {
 	this.schoolNum = schoolNum;
 	this.schoolName = schoolName;
 	this.areaNum = areaNum;
@@ -16,6 +16,7 @@ function School(schoolNum, schoolName, areaNum, areaName, cityName, address,
 	this.contactMail = contactMail;
 	this.netId = netId;
 	this.typeId = typeId;
+	this.comments = comments;
 
 	this.marketingStatus = ko.observable(marketingStatus);
 	this._marketingStatus = marketingStatus; // keeping the original value
@@ -53,7 +54,7 @@ function getYearData(value) {
 					item.city.cityName, item.address, item.principleName,
 					item.phone, item.fax, item.email, item.contactName,
 					item.contactPhone, item.contactMail, item.netId,
-					item.typeId, item.binding.marketingStatus);
+					item.typeId, item.comments, item.binding.marketingStatus);
 		});
 		ViewModel.schools(mapped);
 		

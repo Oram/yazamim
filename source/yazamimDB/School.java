@@ -15,12 +15,13 @@ public class School {
 	private String contactMail;
 	private int netId;
 	private int typeId;
+	private String comments;
 	private Binding binding;
 
 	public School(int schoolNum, String schoolName, City city, String address,
 			String principleName, String phone, String fax, String email,
 			String contactName, String contactPhone, String contactMail,
-			int netId, int typeId) {
+			int netId, int typeId, String comments) {
 		this.schoolNum = schoolNum;
 		this.schoolName = schoolName;
 		this.city = city;
@@ -34,14 +35,16 @@ public class School {
 		this.contactMail = contactMail;
 		this.netId = netId;
 		this.typeId = typeId;
+		this.comments = comments;
 	}
 
 	public School(int schoolNum, String schoolName, City city, String address,
 			String principleName, String phone, String fax, String email,
 			String contactName, String contactPhone, String contactMail,
-			int netId, int typeId, Binding binding) {
+			int netId, int typeId, String comments, Binding binding) {
 		this(schoolNum, schoolName, city, address, principleName, phone, fax,
-				email, contactName, contactPhone, contactMail, netId, typeId);
+				email, contactName, contactPhone, contactMail, netId, typeId,
+				comments);
 		this.binding = binding;
 	}
 
@@ -50,18 +53,16 @@ public class School {
 		this.schoolName = schoolName;
 		this.city = city;
 	}
-	
-	public School(int schoolNum, String schoolName)
-	{
+
+	public School(int schoolNum, String schoolName) {
 		this.schoolNum = schoolNum;
 		this.schoolName = schoolName;
 	}
-	
-	public School(int schoolNum)
-	{
+
+	public School(int schoolNum) {
 		this.schoolNum = schoolNum;
 	}
-	
+
 	public int getSchoolNum() {
 		return schoolNum;
 	}
@@ -166,6 +167,14 @@ public class School {
 		this.typeId = typeId;
 	}
 
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
 	public Binding getBinding() {
 		return binding;
 	}
@@ -182,7 +191,8 @@ public class School {
 				+ ", fax=" + fax + ", email=" + email + ", contactName="
 				+ contactName + ", contactPhone=" + contactPhone
 				+ ", contactMail=" + contactMail + ", netId=" + netId
-				+ ", typeId=" + typeId + "]";
+				+ ", typeId=" + typeId + ", comments=" + getComments()
+				+ ", binding=" + binding + "]";
 	}
 
 }

@@ -44,7 +44,7 @@
     </div>
     <%} %>
     <div class="form-column">
-    <img name="imageLink" data-bind="attr:{src: imageLink}" width="250" ></label></div>
+    <img name="imageLink" data-bind="attr:{src: imageLink}" width="250" ></div>
 </form>
 <div class="buttons clear">
     <button class='positive' type="button" onclick="saveProduct(<%=schoolNum%>, <%=groupNum%>, 0)">
