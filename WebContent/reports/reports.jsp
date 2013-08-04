@@ -62,7 +62,7 @@
     </select>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -80,7 +80,7 @@
 	<yazamim:schoolNetworkCombo id="nets" name="netId" title="כל הרשתות"></yazamim:schoolNetworkCombo>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -98,7 +98,7 @@
 	<yazamim:schoolTypeCombo id="types" name="typeId" title="כל הסוגים"></yazamim:schoolTypeCombo>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -117,7 +117,7 @@
 	<%} %>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -137,7 +137,7 @@
 	<yazamim:programsCombo id="programs" name="programNum" title="כל התכניות"></yazamim:programsCombo>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -174,11 +174,8 @@
 		});
 	</script>
     <div class='buttons'><br>
-    <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
-    </button>
         <button class='positive' onclick="form.action='/excel/GroupMembersExcelServlet.do'">
-       <img src="/common/buttons/excel.png" alt="" />ייצא לאקסל
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -216,7 +213,7 @@
 	</script>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -231,7 +228,7 @@
   	<yazamim:sponsorsCombo id="sponsors" name="sponsorNum" title="כל התומכים" />
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -246,7 +243,7 @@
   	<yazamim:manufacturersCombo id="manufacturers" name="manuNum" title="כל היצרנים" />
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -261,7 +258,7 @@
   	<yazamim:productCategoriesCombo id="categories" name="catId" title="כל הקטגוריות" />
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>
@@ -280,7 +277,7 @@
 	<%} %>
     <div class='buttons'><br>
     <button class='positive' onclick="">
-       <img src="/common/buttons/pdf.png" alt="" />צור דו"ח
+       <img src="/common/buttons/excel.png" alt="" />צור דו"ח
     </button>
     </div>
     </form>

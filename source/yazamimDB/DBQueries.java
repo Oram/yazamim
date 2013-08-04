@@ -3600,7 +3600,7 @@ public class DBQueries {
 
 	public static List<Update> getUpdatesList(int areaNum, int dateRange,
 			String username) {
-		Connection connection = DBConnection.getConnection();
+
 		PreparedStatement statement = null;
 		Update update = null;
 		List<Update> updates = new ArrayList<Update>();
@@ -3621,16 +3621,20 @@ public class DBQueries {
 
 		try {
 			if (areaNum == 0) {
-				statement = connection
-						.prepareStatement(GET_UPDATES_LIST
-								+ " WHERE u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
-								+ strDate);
+				statement = DBConnection
+						.getConnection()
+						.prepareStatement(
+								GET_UPDATES_LIST
+										+ " WHERE u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
+										+ strDate);
 				statement.setString(1, username);
 			} else {
-				statement = connection
-						.prepareStatement(GET_UPDATES_LIST
-								+ " WHERE e.areaNum=? or e.areaNum=0 and u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
-								+ strDate);
+				statement = DBConnection
+						.getConnection()
+						.prepareStatement(
+								GET_UPDATES_LIST
+										+ " WHERE e.areaNum=? and u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
+										+ strDate);
 				statement.setInt(1, areaNum);
 				statement.setString(2, username);
 			}
@@ -3648,8 +3652,6 @@ public class DBQueries {
 		} catch (Exception e) {
 			System.err.println("Exception: " + e.getMessage());
 			e.printStackTrace();
-		} finally {
-			DBConnection.closeConnection(connection);
 		}
 		return updates;
 	}
