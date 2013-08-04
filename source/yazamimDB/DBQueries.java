@@ -814,7 +814,8 @@ public class DBQueries {
 	public static void updateSchool(int schoolNum, String schoolName,
 			String address, String principleName, String phone, String fax,
 			String email, String contactName, String contactPhone,
-			String contactMail, int cityNum, Integer netId, int typeId, String comments) {
+			String contactMail, int cityNum, Integer netId, int typeId,
+			String comments) {
 		Connection connection = DBConnection.getConnection();
 		PreparedStatement statement;
 		try {
@@ -3600,6 +3601,7 @@ public class DBQueries {
 
 	public static List<Update> getUpdatesList(int areaNum, int dateRange,
 			String username) {
+		Connection connection = DBConnection.getConnection();
 
 		PreparedStatement statement = null;
 		Update update = null;
@@ -3621,20 +3623,16 @@ public class DBQueries {
 
 		try {
 			if (areaNum == 0) {
-				statement = DBConnection
-						.getConnection()
-						.prepareStatement(
-								GET_UPDATES_LIST
-										+ " WHERE u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
-										+ strDate);
+				statement = connection
+						.prepareStatement(GET_UPDATES_LIST
+								+ " WHERE u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
+								+ strDate);
 				statement.setString(1, username);
 			} else {
-				statement = DBConnection
-						.getConnection()
-						.prepareStatement(
-								GET_UPDATES_LIST
-										+ " WHERE e.areaNum=? and u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
-										+ strDate);
+				statement = connection
+						.prepareStatement(GET_UPDATES_LIST
+								+ " WHERE e.areaNum=? and u.updateNum not in (select ur.updateNum from updates_removed ur where ur.username = ?) "
+								+ strDate);
 				statement.setInt(1, areaNum);
 				statement.setString(2, username);
 			}
@@ -3652,7 +3650,10 @@ public class DBQueries {
 		} catch (Exception e) {
 			System.err.println("Exception: " + e.getMessage());
 			e.printStackTrace();
+		} finally {
+			DBConnection.closeConnection(connection);
 		}
+
 		return updates;
 	}
 
