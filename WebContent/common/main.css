@@ -12,7 +12,7 @@ body {
     background-color: #E9F2E9;
 }
 
-a, a:hover, a:focus, a:active {
+a,a:hover,a:focus,a:active {
     text-decoration: none;
     color: #000000;
 }
@@ -24,6 +24,7 @@ a, a:hover, a:focus, a:active {
 .additionFieldSet {
     padding-bottom: 1px;
 }
+
 table {
     margin: auto;
     table-layout: fixed;
@@ -45,7 +46,8 @@ select {
     margin-top: 0px;
     padding-bottom: 3px;
 }
-input[type="text"], input[type="password"], textarea {
+
+input[type="text"],input[type="password"],textarea {
     width: 109px;
     background: white none repeat scroll 0 0;
     border: 0 none;
@@ -62,6 +64,7 @@ input[type="text"], input[type="password"], textarea {
 .status-span {
     border-color: #D9D9D9 #EAEAEA white;
 }
+
 fieldset {
     border-radius: 5px;
     border-color: #FFFFFF;
@@ -71,10 +74,12 @@ textarea {
     font: 12px Arial, Helvetica, sans-serif;
     resize: none;
 }
+
 .a-table:hover {
     color: green;
     font-weight: bold;
 }
+
 #header {
     height: 60px;
     background: url(images/yazamim-logo.png) no-repeat 98% 3px;
@@ -99,7 +104,7 @@ textarea {
     width: 2px;
 }
 
-#main-menu > a {
+#main-menu>a {
     color: #000000;
     float: right;
     width: 120px;
@@ -108,7 +113,7 @@ textarea {
     text-align: center;
 }
 
-#main-menu > a:hover {
+#main-menu>a:hover {
     color: #045322;
     font-weight: bold;
 }
@@ -174,7 +179,7 @@ textarea {
     overflow: auto;
 }
 
-.data-table > table {
+.data-table>table {
     width: 100%;
 }
 
@@ -229,14 +234,14 @@ textarea {
     border-color: #D3C8C8 #D5D2D2 white;
 }
 
-.data-table-small > table {
+.data-table-small>table {
     margin: auto;
     table-layout: fixed;
     width: 80%;
     overflow-x: auto;
 }
 
-.data-table > table {
+.data-table>table {
     width: 100%;
     overflow-x: auto;
 }
@@ -247,62 +252,6 @@ textarea {
     border-color: white;
 }
 
-.grp_M_div {
-    width: 300px;
-    float: right;
-    margin-bottom: 50px;
-}
-
-.grp_M_div > input select {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.grp_M_div > label {
-    padding-right: 4px;
-}
-
-.grp_L_div {
-    width: 300px;
-    float: right;
-    margin-bottom: 50px;
-}
-
-.grp_L_div > input select {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.grp_L_div > label {
-    padding-right: 4px;
-}
-
-.inst_R_div {
-    width: 300px;
-    float: right;
-    margin-bottom: 50px;
-}
-
-.inst_R_div > label {
-    padding-right: 4px;
-}
-
-.inst_R_div > input select {
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-
-.inst_RM_Div {
-    width: 500px;
-    float: right;
-    margin-bottom: 50px;
-}
-
-.inst_RM_Div > label {
-    padding-right: 4px;
-}
-
 .sponsgrptableDiv {
     padding: 174px 0px 0px 0px;
 }
@@ -311,4 +260,12 @@ textarea {
     display: inline-block;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+td {
+    overflow: hidden;
+}
+
+td>select {
+    width: 100%;
 }

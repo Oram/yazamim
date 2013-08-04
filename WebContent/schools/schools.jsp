@@ -50,6 +50,7 @@
                         <th>טלפון</th>
                         <th>פקס</th>
                         <th>דוא"ל</th>
+                        <th>הערות</th>
                         <th>סטאטוס שיווק</th>
                     </tr>
                 </thead>
@@ -63,6 +64,7 @@
                         <td data-bind='text: phone'></td>
                         <td data-bind='text: fax'></td>
                         <td data-bind='text: email'></td>
+                        <td data-bind='text: comments'></td>
                         <td><yazamim:marketingStatusCombo id="marketCombo" bind='value: marketingStatus' /></td>
                     </tr>
                 </tbody>
